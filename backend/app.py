@@ -1,6 +1,6 @@
 import os
 from flask import Flask, request, render_template
-from lib.database_connection import get_flask_database_connection
+from db.db_connection import get_flask_database_connection
 from flask_cors import CORS
 
 # Create a new Flask app
