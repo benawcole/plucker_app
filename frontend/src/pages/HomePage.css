@@ -1,0 +1,43 @@
+.wrapper-auth {
+    width: 100vw;
+    height: 50vh;
+    display: grid;
+    grid-template-rows: 300px 1fr 1fr;
+    justify-content: center;
+    background: url("auth-background-blur.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.button-class {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.box-auth {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 500px;
+    width: 50vw;
+    max-width: 800px;
+    height: min-content;
+    padding: 32px 64px;
+    background-color: #d6c0b35b;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 4px solid #6dab6e;
+    border-radius: 8px;
+
+}

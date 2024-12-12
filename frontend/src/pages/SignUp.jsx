@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 
-// import "./SignupPage.css";
+import "./SignUp.css";
+import { SignUp } from "../../src/services/authentication"
 
 export function SignUpPage() {
 //   const [name, setName] = useState("");
@@ -55,7 +56,8 @@ export function SignUpPage() {
     if (
       validatePassword(password) &&
       validateUsername(username) &&
-      validateEmail(email)
+      validateEmail(email) 
+      
     ) {
       const formData = new FormData();
       formData.append("email", email);
@@ -66,7 +68,7 @@ export function SignUpPage() {
         formData.append("file", file); // Append the profile image if it exists
       }
       try {
-        await signup(formData);
+        await SignUp(formData);
         navigate("/");
       } catch (err) {
         console.error(err);
@@ -103,79 +105,84 @@ export function SignUpPage() {
         toastStyle={{ backgroundColor: "#E4E0E1", color: "#493628" }}
       />
 
-      <div className="logo-auth">
-        <h1>Birds App</h1>
-        <p>Catch your bird!</p>
-      </div>
-
       <div className="box-auth">
         <h2>Signup</h2>
-
         <form onSubmit={handleSubmit} className="signup">
           <div className="signup-form">
+
+            <br></br>
             <label id="usernameLabel" htmlFor="username">
               Username:
             </label>
             <input
               id="username"
               type="text"
+              placeholder="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
 
+            <br></br>
             <label id="emailLabel" htmlFor="email">
               Email:
             </label>
             <input
               id="email"
               type="text"
+              placeholder="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
 
+            <br></br>
             <label id="passwordLabel" htmlFor="password">
               Password:
             </label>
             <input
               id="password"
               type="password"
+              placeholder="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
 
+            <br></br>
             <label id="confirmPasswordLabel" htmlFor="password">
               Confirm Password:
             </label>
             <input
               id="confirmPassword"
               type="password"
+              placeholder="confirm password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
 
+            <br></br>
             <label id="profileImageLabel" htmlFor="profileImage">
               Profile Image:
             </label>
             <input
               id="profileImage"
+              role="profile-image"
               type="file"
               onChange={(e) => setFile(e.target.files[0])}
             />
           </div>
           <div className="signup-buttons">
-
-            <Link id="login" to="/">
-              Login
-            </Link>
-            <input
+          <br></br>
+            <input 
               role="submit-button"
               id="submit"
               type="submit"
               value="Sign Up"
+              className="button-class"
             />
           </div>
-        </form>
+        </form>            
       </div>
+      <br></br>
+      <Link id="login" to="/">Return to home page</Link>
     </div>
   );
 }
