@@ -1,14 +1,14 @@
 -- For testing database:
-DROP TABLE IF EXISTS ingredients;
-DROP SEQUENCE IF EXISTS ingredients_id_seq;
-DROP TABLE IF EXISTS steps;
-DROP SEQUENCE IF EXISTS steps_id_seq;
-DROP TABLE IF EXISTS bird_recipes;
-DROP SEQUENCE IF EXISTS bird_recipes_id_seq;
-DROP TABLE IF EXISTS bird_sightings;
-DROP SEQUENCE IF EXISTS bird_sightings_id_seq;
-DROP TABLE IF EXISTS users;
-DROP SEQUENCE IF EXISTS users_id_seq;
+DROP TABLE IF EXISTS ingredients CASCADE;
+DROP SEQUENCE IF EXISTS ingredients_id_seq CASCADE;
+DROP TABLE IF EXISTS steps CASCADE;
+DROP SEQUENCE IF EXISTS steps_id_seq CASCADE;
+DROP TABLE IF EXISTS bird_recipes CASCADE;
+DROP SEQUENCE IF EXISTS bird_recipes_id_seq CASCADE;
+DROP TABLE IF EXISTS bird_sightings CASCADE;
+DROP SEQUENCE IF EXISTS bird_sightings_id_seq CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP SEQUENCE IF EXISTS users_id_seq CASCADE;
 
 -- users table
 CREATE SEQUENCE IF NOT EXISTS users_id_seq;
