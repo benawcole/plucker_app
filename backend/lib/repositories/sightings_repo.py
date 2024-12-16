@@ -102,3 +102,10 @@ class SightingRepository():
             'DELETE FROM bird_sightings WHERE id = $1', [id]
         )
         return None
+    
+    #update bird sighting by id and name
+    async def update_sighting_bird(self, id, bird_name):
+        await self.db_connection.execute(
+            'UPDATE bird_sightings SET bird_name = $1 WHERE id = $2', 
+            [bird_name, id])
+        return None
